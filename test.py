@@ -1,4 +1,11 @@
 from __future__ import division
+
+from sys import platform as _platform
+if _platform == "darwin":
+    # OS X
+    import matplotlib
+    matplotlib.use('TkAgg') #default MacOSX backend doesn't support blitting
+
 import pylab as pyl
 from twoport import *
 from twoport.networks import *
