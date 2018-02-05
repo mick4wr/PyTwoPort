@@ -23,8 +23,8 @@ def basic():
 
     g = filter.transducer_gain(terminator, terminator)
 
-    print filter[200e6]
-    print 'Zin @ 200 MHz:', input_equiv[200e6].z
+    print(filter[200e6])
+    print('Zin @ 200 MHz:', input_equiv[200e6].z)
 
     pyl.figure()
     pyl.plot(f/1e6, utils.db(g))

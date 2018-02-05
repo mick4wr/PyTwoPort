@@ -1,11 +1,11 @@
-from __future__ import division
 import numpy as np
 from numpy import asarray, ndarray, pi, array, dot, zeros, inf, identity, real, imag, sign, abs
 from numpy.linalg import inv
 #from pylab import *
 import pylab as mpl
 from scipy import interpolate
-from utils import *
+from twoport.utils import *
+# import twoport.networks
 
 __all__ = ['OnePort', 'TwoPort',
            '_11', '_12', '_21', '_22', 'plot_gains']
@@ -144,7 +144,7 @@ class OnePort(NPort):
             raise Exception('can only cascade one-port with two-port network')
 
         # convert instance to two-port
-        from networks import Shunt
+        from twoport.networks import Shunt
 
         return Shunt(self).cascade(two_port)
 
@@ -209,7 +209,7 @@ class OnePort(NPort):
         '''
         Convert one-port to shunt connected two-port
         '''
-        from networks import Shunt
+        from twoport.networks import Shunt
 
         return Shunt(self)
 
@@ -217,7 +217,7 @@ class OnePort(NPort):
         '''
         Convert one-port to series connected two-port
         '''
-        from networks import Series
+        from twoport.networks import Series
 
         return Series(self)
 
@@ -434,7 +434,7 @@ class TwoPortBase(NPort):
 
     def cascade(self, two_port):
         if isinstance(two_port, OnePort):
-            from networks import Shunt
+            from twoport.networks import Shunt
 
             return self.cascade(Shunt(two_port))
 

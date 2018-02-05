@@ -1,5 +1,4 @@
-from __future__ import division
-from twoport import *
+from twoport.twoport import *
 from numpy import *
 
 units_multipliers = {'hz':1, 'khz':1e3, 'mhz':1e6, 'ghz':1e9}

@@ -16,10 +16,11 @@
 
 
 from twoport import *
-from s2p import load_snp
-from smithplot import SmithChart
-import networks
-import utils
+from twoport.twoport import *
+from twoport.s2p import load_snp
+from twoport.smithplot import SmithChart
+import twoport.networks
+import twoport.utils
 
 __all__  = ['OnePort', 'TwoPort', 'plot_gains', 'load_snp', 'SmithChart', \
             'networks', 'utils', '_11', '_12', '_21', '_22']

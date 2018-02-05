@@ -1,7 +1,7 @@
-from __future__ import division
 from pylab import *
-from twoport import *
-from utils import *
+# from twoport import *
+from twoport.twoport import *
+from twoport.utils import *
 
 
 class Series(TwoPort):

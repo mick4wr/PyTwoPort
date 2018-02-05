@@ -1,11 +1,10 @@
-from __future__ import division
 from numpy import asarray, array, dot, zeros, inf, identity
 from numpy.linalg import inv
 import numpy as np
 from pylab import *
 from twoport import *
-from networks import *
-from utils import *
+from twoport.networks import *
+from twoport.utils import *
 from matplotlib.patches import Circle, FancyArrowPatch 	# for drawing smith chart
 from matplotlib.lines import Line2D		# for drawing smith chart
 from matplotlib.text import Text
@@ -316,7 +315,7 @@ class SmithChart(object):
 
     def _on_mouse_press(self, event):
         if event.button == 3:
-            print 'clearing'
+            print('clearing')
             self.fig.canvas.restore_region(self.background, bbox=self.ax.bbox)
 
     def _on_mouse_move(self, event):
@@ -427,7 +426,7 @@ class SmithChart(object):
 
     def _resize(self, event):
         self.save_background()
-        print 'resize\n'
+        print('resize\n')
         #self.ax.draw(None)
         #self.fig.canvas.draw()
         #self.fig.canvas.restore_region(self.background, bbox=self.ax.bbox)
